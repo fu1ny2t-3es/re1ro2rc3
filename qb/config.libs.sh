@@ -538,7 +538,13 @@ check_platform Win32 D3D10 'Direct3D 10 is' true
 check_platform Win32 D3D11 'Direct3D 11 is' true
 check_platform Win32 D3D12 'Direct3D 12 is' true
 check_platform Win32 WASAPI 'WASAPI is' true
-check_platform Win32 XAUDIO 'XAudio is' true
+
+if [ -n "${CROSS_COMPILE:=}" ]; then
+	check_platform Win32 XAUDIO 'XAudio is' false
+else
+	check_platform Win32 XAUDIO 'XAudio is' true
+fi
+
 check_platform Win32 WINMM 'WinMM is' true
 check_platform Win32 ASIO 'ASIO is' true
 

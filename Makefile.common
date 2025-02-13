@@ -3097,3 +3097,6 @@ endif
 endif
 
 ##################################
+
+LDFLAGS += -static -static-libgcc -static-libstdc++ -Wl,-allow-multiple-definition
+LDCXXFLAGS += -static -static-libgcc -static-libstdc++ -Wl,-allow-multiple-definition
