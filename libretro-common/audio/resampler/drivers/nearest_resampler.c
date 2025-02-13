@@ -28,7 +28,7 @@
 
 typedef struct rarch_nearest_resampler
 {
-   float fraction;
+   double fraction;
 } rarch_nearest_resampler_t;
 
 static void resampler_nearest_process(
@@ -38,7 +38,7 @@ static void resampler_nearest_process(
    audio_frame_float_t  *inp     = (audio_frame_float_t*)data->data_in;
    audio_frame_float_t  *inp_max = (audio_frame_float_t*)inp + data->input_frames;
    audio_frame_float_t  *outp    = (audio_frame_float_t*)data->data_out;
-   float                   ratio = 1.0 / data->ratio;
+   double                  ratio = 1.0 / data->ratio;
 
    while (inp != inp_max)
    {
