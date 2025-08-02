@@ -860,10 +860,10 @@ void *sinc_resampler_init_hq(double bandwidth_mod,
       case RESAMPLER_QUALITY_HIGHER:
          cutoff            = 0.90;
          sidelobes         = 64;
-         re->phase_bits    = 10;
+         re->phase_bits    = 9;
          re->subphase_bits = 14;
          window_type       = SINC_WINDOW_KAISER;
-         re->kaiser_beta   = 10.5;
+         re->kaiser_beta   = 12.5;
          enable_avx        = 1;
          break;
       case RESAMPLER_QUALITY_HIGHEST:
@@ -878,11 +878,11 @@ void *sinc_resampler_init_hq(double bandwidth_mod,
       case RESAMPLER_QUALITY_NORMAL:
       case RESAMPLER_QUALITY_DONTCARE:
          cutoff            = 0.825;
-         sidelobes         = 32;
+         sidelobes         = 48;
          re->phase_bits    = 8;
          re->subphase_bits = 16;
          window_type       = SINC_WINDOW_KAISER;
-         re->kaiser_beta   = 5.5;
+         re->kaiser_beta   = 10.5;
          break;
    }
    re->kaiser_beta   = 20.0;
