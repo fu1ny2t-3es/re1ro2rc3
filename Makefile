@@ -68,7 +68,6 @@ endif
 
 ifneq ($(findstring Win32,$(OS)),)
    LDFLAGS += -static-libgcc -lwinmm -limm32
-   DEF_FLAGS += -march=corei7-avx
 endif
 
 include Makefile.common
