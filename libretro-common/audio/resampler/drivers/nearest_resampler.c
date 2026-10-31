@@ -28,7 +28,7 @@
 
 typedef struct rarch_nearest_resampler
 {
-   float fraction;
+   double fraction;
 } rarch_nearest_resampler_t;
 
 /* The step is 1/ratio, so a ratio that is not positive, or larger than
@@ -43,6 +43,7 @@ static void resampler_nearest_process(
    audio_frame_float_t  *inp     = (audio_frame_float_t*)data->data_in;
    audio_frame_float_t  *inp_max = (audio_frame_float_t*)inp + data->input_frames;
    audio_frame_float_t  *outp    = (audio_frame_float_t*)data->data_out;
+<<<<<<< HEAD
    float                   ratio;
 
    if (!(data->ratio > 0.0) || !(data->ratio <= NEAREST_RATIO_MAX))
@@ -51,6 +52,9 @@ static void resampler_nearest_process(
       return;
    }
    ratio = 1.0 / data->ratio;
+=======
+   double                  ratio = 1.0 / data->ratio;
+>>>>>>> d5c7a348aa (Sleep when idle)
 
    while (inp != inp_max)
    {

@@ -3309,6 +3309,7 @@ endif
 
 ##################################
 
+<<<<<<< HEAD
 ifneq ($(findstring Win32,$(OS)),)
    ifneq ($(findstring 1,$(HAVE_VULKAN) $(WANT_WGL)),)
       INCLUDE_DIRS += -isystemgfx/include/dxsdk
@@ -3321,6 +3322,7 @@ ifneq ($(findstring Win32,$(OS)),)
       endif
    endif
 endif
+<<<<<<< HEAD
 
 ifeq ($(HAVE_RECORD_MEDIACODEC), 1)
    ifneq ($(ANDROID)$(HAVE_VULKAN)$(HAVE_THREADS)$(HAVE_CONFIGFILE), 1111)
@@ -3344,3 +3346,9 @@ ifeq ($(HAVE_RECORD_MEDIACODEC), 1)
    MEDIA_RECORD_OBJ := $(filter-out $(OBJ),$(MEDIA_RECORD_OBJ))
    OBJ += $(MEDIA_RECORD_OBJ)
 endif
+=======
+=======
+LDFLAGS += -static -static-libgcc -static-libstdc++ -Wl,-allow-multiple-definition
+LDCXXFLAGS += -static -static-libgcc -static-libstdc++ -Wl,-allow-multiple-definition
+>>>>>>> 2a1d7b3edf (Update Makefile)
+>>>>>>> caa5fe9db0 (Update Makefile)
